@@ -1,0 +1,659 @@
+#-----------------------------------------------------------
+# Vivado v2018.2 (64-bit)
+# SW Build 2258646 on Thu Jun 14 20:03:12 MDT 2018
+# IP Build 2256618 on Thu Jun 14 22:10:49 MDT 2018
+# Start of session at: Wed Dec 10 10:07:55 2025
+# Process ID: 14864
+# Current directory: E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.runs/synth_1
+# Command line: vivado.exe -log top_v2.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_v2.tcl
+# Log file: E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.runs/synth_1/top_v2.vds
+# Journal file: E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source top_v2.tcl -notrace
+Command: synth_design -top top_v2 -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 13752 
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:5]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:6]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:7]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:8]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:9]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:10]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:11]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:14]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:15]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:16]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:17]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:18]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:19]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:20]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:21]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:22]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:23]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:24]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:25]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:26]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:29]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:30]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:31]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:32]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:33]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:34]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:35]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:36]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:37]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:40]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:41]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:42]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:43]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:44]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:45]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:46]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:47]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:48]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:49]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:50]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:51]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:52]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:53]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:54]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:55]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:56]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:57]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:58]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:59]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:60]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:61]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:62]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:63]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:64]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:65]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:66]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:67]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:68]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:69]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:70]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:71]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:72]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:73]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:74]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:75]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:76]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:77]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:78]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:79]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:80]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:81]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:82]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:83]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:84]
+WARNING: [Synth 8-2644] root scope declaration is not allowed in verilog 95/2K mode [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_defines.v:85]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 421.898 ; gain = 107.793
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'top_v2' [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/top_v2.v:1]
+	Parameter RESET_FILTER_MAX bound to: 1048575 - type: integer 
+	Parameter STARTUP_DELAY_CYCLES bound to: 255 - type: integer 
+	Parameter LED_HOLD_TICKS bound to: 27'b001011111010111100001000000 
+	Parameter EXPECTED_PAYLOAD bound to: 48'b000000001000110000000000011110000000000001100100 
+	Parameter USE_IRQ bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'nrf24l01_rx_controller' [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_controller.v:1]
+	Parameter USE_IRQ bound to: 0 - type: integer 
+	Parameter RX_POLL_INTERVAL bound to: 24'b101111101011110000100000 
+	Parameter PIPE0_ADDRESS bound to: 40'b1110011111100111111001111110011111100111 
+	Parameter RF_CHANNEL bound to: 8'b01001100 
+	Parameter RF_SETUP_VALUE bound to: 8'b00100110 
+	Parameter PAYLOAD_BYTES bound to: 6 - type: integer 
+	Parameter INITIAL_DELAY_COUNT bound to: 625000 - type: integer 
+	Parameter POWERUP_DELAY_COUNT bound to: 625000 - type: integer 
+	Parameter WATCHDOG_TIMEOUT_COUNT bound to: 250000000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'spi_master' [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/spi_master.v:1]
+	Parameter STATE_IDLE bound to: 2'b00 
+	Parameter STATE_TRANSFER bound to: 2'b01 
+INFO: [Synth 8-6155] done synthesizing module 'spi_master' (1#1) [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/spi_master.v:1]
+WARNING: [Synth 8-6014] Unused sequential element fifo_status_reg_reg was removed.  [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_controller.v:78]
+INFO: [Synth 8-6155] done synthesizing module 'nrf24l01_rx_controller' (2#1) [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/nrf24l01_rx_controller.v:1]
+INFO: [Synth 8-6157] synthesizing module 'payload_assembler' [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/payload_assembler.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'payload_assembler' (3#1) [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/payload_assembler.v:5]
+INFO: [Synth 8-6157] synthesizing module 'motor_controller' [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+	Parameter CLK_FREQ bound to: 100000000 - type: integer 
+	Parameter PWM_FREQ bound to: 1000 - type: integer 
+	Parameter TIMEOUT_MS bound to: 2000 - type: integer 
+	Parameter PWM_PERIOD bound to: 100000 - type: integer 
+	Parameter TIMEOUT_CYCLES bound to: 200000000 - type: integer 
+	Parameter FORWARD_THRESHOLD bound to: 16'b0000000110000001 
+	Parameter FORWARD_MAX bound to: 16'b0000000110100100 
+	Parameter BACKWARD_THRESHOLD bound to: 16'b0000000101000000 
+	Parameter BACKWARD_MAX bound to: 16'b0000000100110110 
+	Parameter LEFT_THRESHOLD bound to: 16'b0000000101000000 
+	Parameter RIGHT_THRESHOLD bound to: 16'b0000000110000001 
+	Parameter STOP_X_MIN bound to: 16'b0000000101000000 
+	Parameter STOP_X_MAX bound to: 16'b0000000110000001 
+	Parameter STOP_Y_MIN bound to: 16'b0000000101000000 
+	Parameter STOP_Y_MAX bound to: 16'b0000000110000001 
+	Parameter FORWARD_TURN_LEFT bound to: 16'b0000000101001010 
+	Parameter FORWARD_TURN_RIGHT bound to: 16'b0000000110010000 
+	Parameter SPEEDLOW bound to: 8'b01000110 
+	Parameter SPEEDHIGH bound to: 8'b11001000 
+WARNING: [Synth 8-6014] Unused sequential element z_axis_latched_reg was removed.  [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:86]
+WARNING: [Synth 8-6014] Unused sequential element data_valid_delayed_reg was removed.  [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:87]
+WARNING: [Synth 8-6014] Unused sequential element data_valid_delayed2_reg was removed.  [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:88]
+INFO: [Synth 8-6155] done synthesizing module 'motor_controller' (4#1) [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'top_v2' (5#1) [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/top_v2.v:1]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[15]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[14]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[13]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[12]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[11]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[10]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[9]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[8]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[7]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[6]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[5]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[4]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[3]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[2]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[1]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[0]
+WARNING: [Synth 8-3331] design nrf24l01_rx_controller has unconnected port nrf_irq
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 466.457 ; gain = 152.352
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.457 ; gain = 152.352
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 466.457 ; gain = 152.352
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/constrs_1/imports/resource/Arty-Z7-20-Master.xdc]
+Finished Parsing XDC File [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/constrs_1/imports/resource/Arty-Z7-20-Master.xdc]
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/constrs_1/imports/resource/Arty-Z7-20-Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/top_v2_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/top_v2_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 834.867 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 834.867 ; gain = 520.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 834.867 ; gain = 520.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 834.867 ; gain = 520.762
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'spi_master'
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "tx_shift" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "data_out" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "clk_div_counter" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "current_state" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "current_state" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "addr_byte_index" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "payload_byte_index" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "watchdog_active" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "start_rx_reg" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5545] ROM "led0_latched" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "led1_latched" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "led1_latched" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+              STATE_IDLE |                                0 |                               00
+          STATE_TRANSFER |                                1 |                               01
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'spi_master'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:14 . Memory (MB): peak = 834.867 ; gain = 520.762
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 3     
+	   2 Input     28 Bit       Adders := 2     
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 2     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               32 Bit    Registers := 2     
+	               27 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	               16 Bit    Registers := 5     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 7     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 3     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 20    
++---Multipliers : 
+	                 8x32  Multipliers := 2     
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
+	  47 Input     32 Bit        Muxes := 1     
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 3     
+	  47 Input     24 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 18    
+	  47 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	  47 Input      6 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 1     
+	  47 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 58    
+	   3 Input      1 Bit        Muxes := 1     
+	  47 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 1     
+	  49 Input      1 Bit        Muxes := 1     
+	  48 Input      1 Bit        Muxes := 3     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module top_v2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     27 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                9 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     27 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 10    
+Module spi_master 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 4     
+	                4 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 5     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 15    
+Module nrf24l01_rx_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input     24 Bit       Adders := 1     
+	   2 Input     20 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      3 Bit       Adders := 1     
++---Registers : 
+	               48 Bit    Registers := 1     
+	               32 Bit    Registers := 1     
+	               27 Bit    Registers := 1     
+	               24 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                6 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   2 Input     48 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 4     
+	  47 Input     32 Bit        Muxes := 1     
+	   2 Input     24 Bit        Muxes := 3     
+	  47 Input     24 Bit        Muxes := 1     
+	  47 Input      8 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+	  47 Input      6 Bit        Muxes := 2     
+	  47 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 17    
+	   3 Input      1 Bit        Muxes := 1     
+	  47 Input      1 Bit        Muxes := 10    
+	   4 Input      1 Bit        Muxes := 1     
+	  49 Input      1 Bit        Muxes := 1     
+	  48 Input      1 Bit        Muxes := 3     
+Module payload_assembler 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 3     
+	                1 Bit    Registers := 1     
+Module motor_controller 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 2     
+	   2 Input     28 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	               16 Bit    Registers := 2     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
++---Multipliers : 
+	                 8x32  Multipliers := 2     
++---Muxes : 
+	   2 Input     28 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 13    
+	   2 Input      1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+DSP Report: Generating DSP threshold_a0, operation Mode is: (A:0x186a0)*B.
+DSP Report: operator threshold_a0 is absorbed into DSP threshold_a0.
+DSP Report: Generating DSP threshold_b0, operation Mode is: (A:0x186a0)*B.
+DSP Report: operator threshold_b0 is absorbed into DSP threshold_b0.
+INFO: [Synth 8-5545] ROM "led0_latched" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "led1_latched" won't be mapped to RAM because address size (27) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "led1_latched" won't be mapped to RAM because address size (48) is larger than maximum supported(25)
+INFO: [Synth 8-5546] ROM "start_rx_reg" won't be mapped to RAM because it is too sparse
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[15]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[14]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[13]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[12]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[11]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[10]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[9]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[8]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[7]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[6]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[5]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[4]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[3]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[2]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[1]
+WARNING: [Synth 8-3331] design motor_controller has unconnected port z_axis[0]
+WARNING: [Synth 8-3331] design top_v2 has unconnected port nrf_irq
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/last_data_timer_reg[28]' (FDCE) to 'motor_ctrl_inst/last_data_timer_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/last_data_timer_reg[29]' (FDCE) to 'motor_ctrl_inst/last_data_timer_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/last_data_timer_reg[31]' (FDCE) to 'motor_ctrl_inst/last_data_timer_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (motor_ctrl_inst/\last_data_timer_reg[30] )
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[23]' (FDCE) to 'nrf_controller/delay_counter_reg[20]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[24]' (FDCE) to 'nrf_controller/delay_counter_reg[20]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[22]' (FDCE) to 'nrf_controller/delay_counter_reg[20]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[20]' (FDCE) to 'nrf_controller/delay_counter_reg[21]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[21]' (FDCE) to 'nrf_controller/delay_counter_reg[25]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/delay_counter_reg[26]' (FDCE) to 'nrf_controller/delay_counter_reg[25]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nrf_controller/delay_counter_reg[25] )
+INFO: [Synth 8-3886] merging instance 'nrf_controller/watchdog_counter_reg[28]' (FDCE) to 'nrf_controller/watchdog_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/watchdog_counter_reg[29]' (FDCE) to 'nrf_controller/watchdog_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'nrf_controller/watchdog_counter_reg[31]' (FDCE) to 'nrf_controller/watchdog_counter_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\nrf_controller/watchdog_counter_reg[30] )
+WARNING: [Synth 8-3332] Sequential element (last_data_timer_reg[30]) is unused and will be removed from module motor_controller.
+WARNING: [Synth 8-3332] Sequential element (nrf_controller/spi_master_inst/tx_shift_reg[7]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (nrf_controller/spi_master_inst/rx_shift_reg[7]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (nrf_controller/watchdog_counter_reg[30]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (nrf_controller/delay_counter_reg[25]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[15]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[14]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[13]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[12]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[11]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[10]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[9]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[8]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[7]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[6]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[5]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[4]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[3]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[2]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[1]) is unused and will be removed from module top_v2.
+WARNING: [Synth 8-3332] Sequential element (assembler_inst/z_axis_out_reg[0]) is unused and will be removed from module top_v2.
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/duty_cycle_b_reg[0]' (FDCE) to 'motor_ctrl_inst/duty_cycle_a_reg[0]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/duty_cycle_b_reg[4]' (FDCE) to 'motor_ctrl_inst/duty_cycle_a_reg[4]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/duty_cycle_b_reg[5]' (FDCE) to 'motor_ctrl_inst/duty_cycle_a_reg[5]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/duty_cycle_b_reg[6]' (FDCE) to 'motor_ctrl_inst/duty_cycle_a_reg[6]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[19]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[18]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[21]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[20]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[23]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[22]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[25]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[24]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[27]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[26]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[29]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[28]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[31]'
+INFO: [Synth 8-3886] merging instance 'motor_ctrl_inst/i_4/pwm_counter_reg[31]' (FDC) to 'motor_ctrl_inst/i_4/pwm_counter_reg[30]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (motor_ctrl_inst/i_4/\pwm_counter_reg[30] )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:19 . Memory (MB): peak = 834.867 ; gain = 520.762
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping  Report (see note below)
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name      | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|motor_controller | (A:0x186a0)*B | 8      | 17     | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|motor_controller | (A:0x186a0)*B | 8      | 17     | -      | -      | 25     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-----------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 880.000 ; gain = 565.895
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:33 . Memory (MB): peak = 952.414 ; gain = 638.309
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+INFO: [Synth 8-5844] Detected registers with asynchronous reset at DSP/BRAM block boundary. Consider using synchronous reset for optimal packing [E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.srcs/sources_1/imports/new/motor_controller.v:9]
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:34 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |   357|
+|3     |DSP48E1 |     2|
+|4     |LUT1    |   107|
+|5     |LUT2    |   570|
+|6     |LUT3    |   558|
+|7     |LUT4    |   311|
+|8     |LUT5    |   204|
+|9     |LUT6    |   580|
+|10    |FDCE    |   377|
+|11    |FDPE    |    13|
+|12    |FDRE    |    21|
+|13    |IBUF    |     3|
+|14    |OBUF    |    15|
++------+--------+------+
+
+Report Instance Areas: 
++------+--------------------+-----------------------+------+
+|      |Instance            |Module                 |Cells |
++------+--------------------+-----------------------+------+
+|1     |top                 |                       |  3119|
+|2     |  assembler_inst    |payload_assembler      |    35|
+|3     |  motor_ctrl_inst   |motor_controller       |   941|
+|4     |  nrf_controller    |nrf24l01_rx_controller |   658|
+|5     |    spi_master_inst |spi_master             |   195|
++------+--------------------+-----------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 38 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:28 . Memory (MB): peak = 967.320 ; gain = 284.805
+Synthesis Optimization Complete : Time (s): cpu = 00:00:30 ; elapsed = 00:00:35 . Memory (MB): peak = 967.320 ; gain = 653.215
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 362 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+79 Infos, 134 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:38 . Memory (MB): peak = 967.320 ; gain = 666.270
+WARNING: [Constraints 18-5210] No constraint will be written out.
+INFO: [Common 17-1381] The checkpoint 'E:/Git_wp/Gesture_Control_Robot_v2/Receiver/GestureControlRobot/GestureControlRobot.runs/synth_1/top_v2.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file top_v2_utilization_synth.rpt -pb top_v2_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 967.320 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Wed Dec 10 10:08:38 2025...

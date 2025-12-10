@@ -21,22 +21,15 @@ module top_v2 (
 
     localparam integer RESET_FILTER_MAX = 20'hFFFFF;
     localparam integer STARTUP_DELAY_CYCLES = 9'd255;
-    localparam [26:0] LED_HOLD_TICKS = 27'd1_000_000;
+    localparam [26:0] LED_HOLD_TICKS = 27'd25_000_000;
     // Expected payload in little-endian byte order (LSB-first from nRF24L01)
     localparam [47:0] EXPECTED_PAYLOAD = 48'h008C00780064;
-    localparam [15:0] EXPECTED_X = 16'd100;
-    localparam [15:0] EXPECTED_Y = 16'd120;
-    localparam [15:0] EXPECTED_Z = 16'd140;
-    localparam integer USE_IRQ = 0;
+    localparam integer USE_IRQ = 1;
 
     wire rst_n;
     wire rx_ready;
     wire [47:0] rx_payload;
     wire payload_ready_pulse;
-    wire [15:0] x_axis;
-    wire [15:0] y_axis;
-    wire [15:0] z_axis;
-    wire packet_ready;
 
     reg [19:0] reset_counter;
     reg reset_sync;
@@ -73,7 +66,7 @@ module top_v2 (
     end
 
     nrf24l01_rx_controller #(
-        .USE_IRQ(USE_IRQ)
+        .USE_IRQ(0)
     ) nrf_controller (
         .clk(clk),
         .rst_n(rst_n),
@@ -91,37 +84,18 @@ module top_v2 (
 
     assign payload_ready = payload_ready_pulse;
 
-    payload_assembler payload_assembler_inst (
-        .clk(clk),
-        .rst_n(rst_n),
-        .rx_payload_in(rx_payload),
-        .data_valid(payload_ready_pulse),
-        .x_axis_out(x_axis),
-        .y_axis_out(y_axis),
-        .z_axis_out(z_axis),
-        .packet_ready(packet_ready)
-    );
-
     reg [3:0] led_state;
     reg led0_latched;
     reg led1_latched;
-    reg led2_latched;
-    reg led3_latched;
     reg [26:0] led0_counter;
     reg [26:0] led1_counter;
-    reg [26:0] led2_counter;
-    reg [26:0] led3_counter;
 
     always @(posedge clk or negedge rst_n) begin
         if (!rst_n) begin
             led0_counter <= 27'd0;
             led1_counter <= 27'd0;
-            led2_counter <= 27'd0;
-            led3_counter <= 27'd0;
             led0_latched <= 1'b0;
             led1_latched <= 1'b0;
-            led2_latched <= 1'b0;
-            led3_latched <= 1'b0;
         end else begin
             if (led0_counter != 0) begin
                 led0_counter <= led0_counter - 1'b1;
@@ -135,35 +109,13 @@ module top_v2 (
                     led1_latched <= 1'b0;
             end
 
-            if (led2_counter != 0) begin
-                led2_counter <= led2_counter - 1'b1;
-                if (led2_counter == 1)
-                    led2_latched <= 1'b0;
-            end
-
-            if (led3_counter != 0) begin
-                led3_counter <= led3_counter - 1'b1;
-                if (led3_counter == 1)
-                    led3_latched <= 1'b0;
-            end
-
             if (payload_ready_pulse) begin
                 led0_latched <= 1'b1;
                 led0_counter <= LED_HOLD_TICKS;
 
-                if (x_axis == EXPECTED_X) begin
+                if (rx_payload == EXPECTED_PAYLOAD) begin
                     led1_latched <= 1'b1;
                     led1_counter <= LED_HOLD_TICKS;
-                end
-
-                if (y_axis == EXPECTED_Y) begin
-                    led2_latched <= 1'b1;
-                    led2_counter <= LED_HOLD_TICKS;
-                end
-
-                if (z_axis == EXPECTED_Z) begin
-                    led3_latched <= 1'b1;
-                    led3_counter <= LED_HOLD_TICKS;
                 end
             end
         end
@@ -173,10 +125,10 @@ module top_v2 (
         if (!rst_n) begin
             led_state <= 4'b0000;
         end else begin
-            led_state[0] <= led0_latched || (nrf_controller.current_state == 6'd44);
+            led_state[0] <= led0_latched;
             led_state[1] <= led1_latched;
-            led_state[2] <= led2_latched;
-            led_state[3] <= led3_latched;
+            led_state[2] <= rx_ready;
+            led_state[3] <= nrf_csn;
         end
     end
 

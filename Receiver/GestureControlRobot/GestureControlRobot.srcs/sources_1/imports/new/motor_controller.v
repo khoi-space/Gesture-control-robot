@@ -115,13 +115,25 @@ module motor_controller #(
     // Based on Arduino GestureReceiver logic
     //=========================================================================
     
-    // Gesture thresholds (matching Arduino code)
-    localparam FORWARD_THRESHOLD  = 16'd390;   // Y > 390
+    // Gesture thresholds (matching Arduino code - CALIBRATED FROM REAL MEASUREMENT)
+    localparam FORWARD_THRESHOLD  = 16'd385;   // Y > 385
     localparam FORWARD_MAX        = 16'd420;   // Y >= 420 (max speed)
-    localparam BACKWARD_THRESHOLD = 16'd310;   // X < 310
-    localparam BACKWARD_MAX       = 16'd335;   // X <= 335 (max speed)
+    localparam BACKWARD_THRESHOLD = 16'd320;   // Y < 320
+    localparam BACKWARD_MAX       = 16'd310;   // Y <= 310 (max speed)
     localparam LEFT_THRESHOLD     = 16'd320;   // X < 320
-    localparam RIGHT_THRESHOLD    = 16'd400;   // X > 400
+    localparam RIGHT_THRESHOLD    = 16'd385;   // X > 385
+    
+    // STOP zone (neutral position from real measurement)
+    localparam STOP_X_MIN = 16'd320;
+    localparam STOP_X_MAX = 16'd385;
+    localparam STOP_Y_MIN = 16'd320;
+    localparam STOP_Y_MAX = 16'd385;
+    
+    // Turning thresholds for FORWARD + LEFT/RIGHT
+    localparam FORWARD_TURN_LEFT  = 16'd330;   // X < 330 while going forward
+    localparam FORWARD_TURN_RIGHT = 16'd400;   // X > 400 while going forward
+    localparam SPEEDLOW  = 8'd70;              // Slow wheel speed for turning
+    localparam SPEEDHIGH = 8'd200;             // Fast wheel speed for turning
     
     // Motor control logic - continuously evaluate latched gesture data
     always @(posedge clk or negedge rst_n) begin
@@ -143,32 +155,63 @@ module motor_controller #(
                 duty_cycle_b <= 8'd0;
                 
             end else begin
-                // Continuously evaluate latched gesture data
+                // Continuously evaluate latched gesture data - CALIBRATED LOGIC
                 
-                if (y_axis_latched > FORWARD_THRESHOLD) begin
+                // Check STOP zone first (neutral position)
+                if ((x_axis_latched >= STOP_X_MIN && x_axis_latched <= STOP_X_MAX) &&
+                    (y_axis_latched >= STOP_Y_MIN && y_axis_latched <= STOP_Y_MAX)) begin
                     //---------------------------------------------
-                    // FORWARD - Y > 390
+                    // STOP - Neutral position (vùng đo thực tế)
+                    //---------------------------------------------
+                    motor_a1 <= 1'b0;
+                    motor_a2 <= 1'b0;
+                    motor_b1 <= 1'b0;
+                    motor_b2 <= 1'b0;
+                    duty_cycle_a <= 8'd0;
+                    duty_cycle_b <= 8'd0;
+                    
+                end else if (y_axis_latched > FORWARD_THRESHOLD) begin
+                    //---------------------------------------------
+                    // FORWARD - Y > 385 (with turning capability)
                     //---------------------------------------------
                     motor_a1 <= 1'b0;
                     motor_a2 <= 1'b1;
                     motor_b1 <= 1'b1;
                     motor_b2 <= 1'b0;
                     
-                    // Variable speed: 100 to 255
-                    if (y_axis_latched >= FORWARD_MAX) begin
-                        duty_cycle_a <= 8'd255;  // Max speed
-                        duty_cycle_b <= 8'd255;
+                    // Check for turning while moving forward
+                    if (x_axis_latched < FORWARD_TURN_LEFT) begin
+                        // FORWARD + LEFT: Motor A slow, Motor B fast
+                        if (y_axis_latched >= FORWARD_MAX) begin
+                            duty_cycle_a <= SPEEDLOW;
+                            duty_cycle_b <= SPEEDHIGH;
+                        end else begin
+                            duty_cycle_a <= SPEEDLOW;
+                            duty_cycle_b <= SPEEDHIGH;
+                        end
+                    end else if (x_axis_latched > FORWARD_TURN_RIGHT) begin
+                        // FORWARD + RIGHT: Motor A fast, Motor B slow
+                        if (y_axis_latched >= FORWARD_MAX) begin
+                            duty_cycle_a <= SPEEDHIGH;
+                            duty_cycle_b <= SPEEDLOW;
+                        end else begin
+                            duty_cycle_a <= SPEEDHIGH;
+                            duty_cycle_b <= SPEEDLOW;
+                        end
                     end else begin
-                        // Map Y(390-420) to speed(100-255)
-                        // speed = 100 + (y - 390) * (255-100) / (420-390)
-                        // speed = 100 + (y - 390) * 155 / 30
-                        duty_cycle_a <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 30);
-                        duty_cycle_b <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 30);
+                        // FORWARD straight: Both motors same speed
+                        if (y_axis_latched >= FORWARD_MAX) begin
+                            duty_cycle_a <= 8'd255;
+                            duty_cycle_b <= 8'd255;
+                        end else begin
+                            duty_cycle_a <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 35);
+                            duty_cycle_b <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 35);
+                        end
                     end
                     
-                end else if (x_axis_latched < BACKWARD_THRESHOLD) begin
+                end else if (y_axis_latched < BACKWARD_THRESHOLD) begin
                     //---------------------------------------------
-                    // BACKWARD - X < 310
+                    // BACKWARD - Y < 320 (tốc độ biến đổi)
                     //---------------------------------------------
                     motor_a1 <= 1'b1;
                     motor_a2 <= 1'b0;
@@ -176,15 +219,13 @@ module motor_controller #(
                     motor_b2 <= 1'b1;
                     
                     // Variable speed: 100 to 255 (inverse mapping)
-                    if (x_axis_latched <= BACKWARD_MAX) begin
+                    if (y_axis_latched <= BACKWARD_MAX) begin
                         duty_cycle_a <= 8'd255;  // Max speed
                         duty_cycle_b <= 8'd255;
                     end else begin
-                        // Map X(310-335) to speed(255-100) - inverse
-                        // speed = 255 - (x - 310) * (255-100) / (335-310)
-                        // speed = 255 - (x - 310) * 155 / 25
-                        duty_cycle_a <= 8'd255 - ((x_axis_latched - BACKWARD_THRESHOLD) * 155 / 25);
-                        duty_cycle_b <= 8'd255 - ((x_axis_latched - BACKWARD_THRESHOLD) * 155 / 25);
+                        // Map Y(310-320) to speed(255-100) - inverse
+                        duty_cycle_a <= 8'd255 - ((y_axis_latched - BACKWARD_MAX) * 155 / 10);
+                        duty_cycle_b <= 8'd255 - ((y_axis_latched - BACKWARD_MAX) * 155 / 10);
                     end
                     
                 end else if (x_axis_latched < LEFT_THRESHOLD) begin
@@ -208,17 +249,6 @@ module motor_controller #(
                     motor_b2 <= 1'b1;
                     duty_cycle_a <= 8'd150;
                     duty_cycle_b <= 8'd150;
-                    
-                end else begin
-                    //---------------------------------------------
-                    // STOP - Neutral position
-                    //---------------------------------------------
-                    motor_a1 <= 1'b0;
-                    motor_a2 <= 1'b0;
-                    motor_b1 <= 1'b0;
-                    motor_b2 <= 1'b0;
-                    duty_cycle_a <= 8'd0;
-                    duty_cycle_b <= 8'd0;
                 end
             end
         end
@@ -233,7 +263,7 @@ module motor_controller #(
             
             if (y_axis_latched > FORWARD_THRESHOLD)
                 $display("[Motor] Action: FORWARD, Speed: ENA=%d ENB=%d", duty_cycle_a, duty_cycle_b);
-            else if (x_axis_latched < BACKWARD_THRESHOLD)
+            else if (y_axis_latched < BACKWARD_THRESHOLD)
                 $display("[Motor] Action: BACKWARD, Speed: ENA=%d ENB=%d", duty_cycle_a, duty_cycle_b);
             else if (x_axis_latched < LEFT_THRESHOLD)
                 $display("[Motor] Action: LEFT");

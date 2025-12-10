@@ -1,0 +1,104 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.2 (win64) Build 2258646 Thu Jun 14 20:03:12 MDT 2018
+| Date         : Wed Dec 10 10:09:36 2025
+| Host         : myDELL running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_v2_control_sets_placed.rpt
+| Design       : top_v2
+| Device       : xc7z020
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Number of unique control sets                            |    34 |
+| Unused register locations in slices containing registers |    56 |
++----------------------------------------------------------+-------+
+
+
+2. Histogram
+------------
+
++--------+--------------+
+| Fanout | Control Sets |
++--------+--------------+
+|      2 |            4 |
+|      6 |            2 |
+|      8 |            4 |
+|     10 |            1 |
+|     12 |            2 |
+|     14 |            2 |
+|    16+ |           19 |
++--------+--------------+
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |               2 |            1 |
+| No           | No                    | Yes                    |             128 |           37 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |             654 |          112 |
+| Yes          | Yes                   | No                     |              40 |            5 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+|  Clock Signal  |                        Enable Signal                        |                     Set/Reset Signal                    | Slice Load Count | Bel Load Count |
++----------------+-------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+|  clk_IBUF_BUFG |                                                             |                                                         |                1 |              2 |
+|  clk_IBUF_BUFG | assembler_inst/E[0]                                         | motor_ctrl_inst/motor_a1_reg_0                          |                1 |              2 |
+|  clk_IBUF_BUFG | nrf_controller/nrf_ce0                                      | motor_ctrl_inst/motor_a1_reg_0                          |                1 |              2 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/spi_mosi_i_1_n_0             | motor_ctrl_inst/motor_a1_reg_0                          |                1 |              2 |
+|  clk_IBUF_BUFG |                                                             | motor_ctrl_inst/last_data_timer_reg[5]_0                |                2 |              6 |
+|  clk_IBUF_BUFG | assembler_inst/E[0]                                         | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                1 |              6 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[3]                         | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                1 |              8 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[3]                         | motor_ctrl_inst/last_data_timer_reg[5]_0                |                2 |              8 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/bit_counter[3]_i_1_n_0       | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                2 |              8 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/payload_byte_index_reg[0][0] | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                1 |              8 |
+|  clk_IBUF_BUFG |                                                             | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                4 |             10 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/current_state_reg[0][0]      | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                5 |             12 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/next_after_csn_reg[0][0]     | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                5 |             12 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/tx_shift_0                   | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                2 |             14 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/rx_shift_1                   | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                4 |             14 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[5]                         | motor_ctrl_inst/last_data_timer_reg[5]_0                |                2 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[2]                         | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                1 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[4]                         | motor_ctrl_inst/last_data_timer_reg[5]_0                |                3 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[0]                         | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                2 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/E[1]                         | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |                1 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/data_out[7]_i_1_n_0          | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                3 |             16 |
+|  clk_IBUF_BUFG | nrf_controller/spi_start                                    | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                6 |             16 |
+|  clk_IBUF_BUFG | startup_counter[8]_i_1_n_0                                  | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                2 |             18 |
+|  clk_IBUF_BUFG |                                                             | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |               11 |             40 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/delay_counter_reg[0][0]      | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |               10 |             40 |
+|  clk_IBUF_BUFG | sel                                                         | reset_btn_IBUF                                          |                5 |             40 |
+|  clk_IBUF_BUFG | assembler_inst/E[0]                                         | motor_ctrl_inst/last_data_timer_reg[5]_0                |                6 |             48 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/rx_poll_counter_reg[0][0]    | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                5 |             48 |
+|  clk_IBUF_BUFG | nrf_controller/led0_counter_reg_0_sn_1                      | motor_ctrl_inst/last_data_timer_reg[5]_0                |                7 |             54 |
+|  clk_IBUF_BUFG | nrf_controller/led1_counter_reg_0_sn_1                      | motor_ctrl_inst/last_data_timer_reg[5]_0                |                7 |             54 |
+|  clk_IBUF_BUFG | nrf_controller/spi_master_inst/watchdog_counter_reg[0][0]   | nrf_controller/spi_master_inst/clk_div_counter_reg[6]_0 |                5 |             56 |
+|  clk_IBUF_BUFG | assembler_inst/packet_ready                                 | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |               14 |             64 |
+|  clk_IBUF_BUFG | nrf_controller/payload_ready_OBUF                           | motor_ctrl_inst/x_axis_latched_reg[0]_0                 |               12 |             64 |
+|  clk_IBUF_BUFG |                                                             | motor_ctrl_inst/motor_a1_reg_0                          |               20 |             72 |
++----------------+-------------------------------------------------------------+---------------------------------------------------------+------------------+----------------+
+
+

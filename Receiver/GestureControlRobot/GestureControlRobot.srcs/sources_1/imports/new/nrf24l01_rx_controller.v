@@ -7,7 +7,7 @@ module nrf24l01_rx_controller #(
     parameter integer PAYLOAD_BYTES = 6,
     parameter integer INITIAL_DELAY_COUNT = 27'd625000,
     parameter integer POWERUP_DELAY_COUNT = 27'd625000,
-    parameter integer WATCHDOG_TIMEOUT_COUNT = 32'd375000000 // ~3 s at 125 MHz; adjust if clk differs
+    parameter integer WATCHDOG_TIMEOUT_COUNT = 32'd250000000 // 2s at 125 MHz; adjust if clk differs
 ) (
     input clk,
     input rst_n,
@@ -23,7 +23,7 @@ module nrf24l01_rx_controller #(
     output reg payload_ready
 );
 
-`include "nrf24l01_rx_defines.v"
+    `include "nrf24l01_rx_defines.v"
 
     reg [5:0] current_state;
     reg [5:0] next_after_csn;

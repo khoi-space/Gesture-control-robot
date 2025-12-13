@@ -116,24 +116,25 @@ module motor_controller #(
     //=========================================================================
     
     // Gesture thresholds (matching Arduino code - CALIBRATED FROM REAL MEASUREMENT)
-    localparam FORWARD_THRESHOLD  = 16'd385;   // Y > 385
+    localparam FORWARD_THRESHOLD  = 16'd395;   // Y > 395
     localparam FORWARD_MAX        = 16'd420;   // Y >= 420 (max speed)
     localparam BACKWARD_THRESHOLD = 16'd320;   // Y < 320
     localparam BACKWARD_MAX       = 16'd310;   // Y <= 310 (max speed)
     localparam LEFT_THRESHOLD     = 16'd320;   // X < 320
-    localparam RIGHT_THRESHOLD    = 16'd385;   // X > 385
+    localparam RIGHT_THRESHOLD    = 16'd395;   // X > 395
     
     // STOP zone (neutral position from real measurement)
     localparam STOP_X_MIN = 16'd320;
-    localparam STOP_X_MAX = 16'd385;
+    localparam STOP_X_MAX = 16'd395;
     localparam STOP_Y_MIN = 16'd320;
-    localparam STOP_Y_MAX = 16'd385;
+    localparam STOP_Y_MAX = 16'd395;
     
-    // Turning thresholds for FORWARD + LEFT/RIGHT
-    localparam FORWARD_TURN_LEFT  = 16'd330;   // X < 330 while going forward
-    localparam FORWARD_TURN_RIGHT = 16'd400;   // X > 400 while going forward
-    localparam SPEEDLOW  = 8'd70;              // Slow wheel speed for turning
-    localparam SPEEDHIGH = 8'd200;             // Fast wheel speed for turning
+    // Z-axis spin control
+    localparam Z_SPIN_THRESHOLD = 16'd395;     // Z > 395 to spin
+    localparam SPIN_SPEED = 8'd150;            // Speed for spinning in place
+    // LEFT/RIGHT differential speed parameters
+    localparam TURN_SPEED_LOW  = 8'd80;        // Slow wheel for turning
+    localparam TURN_SPEED_HIGH = 8'd220;       // Fast wheel for turning
     
     // Motor control logic - continuously evaluate latched gesture data
     always @(posedge clk or negedge rst_n) begin
@@ -156,57 +157,35 @@ module motor_controller #(
                 
             end else begin
                 // Continuously evaluate latched gesture data - CALIBRATED LOGIC
+                // Priority order: Z-SPIN > FORWARD > BACKWARD > LEFT > RIGHT > STOP
                 
-                // Check STOP zone first (neutral position)
-                if ((x_axis_latched >= STOP_X_MIN && x_axis_latched <= STOP_X_MAX) &&
-                    (y_axis_latched >= STOP_Y_MIN && y_axis_latched <= STOP_Y_MAX)) begin
+                if (z_axis_latched > Z_SPIN_THRESHOLD) begin
                     //---------------------------------------------
-                    // STOP - Neutral position (vùng đo thực tế)
+                    // Z-AXIS SPIN - Z > 395 (spin counter-clockwise, HIGHEST PRIORITY)
                     //---------------------------------------------
-                    motor_a1 <= 1'b0;
+                    motor_a1 <= 1'b1;  // Motor A backward
                     motor_a2 <= 1'b0;
-                    motor_b1 <= 1'b0;
+                    motor_b1 <= 1'b1;  // Motor B forward
                     motor_b2 <= 1'b0;
-                    duty_cycle_a <= 8'd0;
-                    duty_cycle_b <= 8'd0;
+                    duty_cycle_a <= SPIN_SPEED;  // Both wheels 150
+                    duty_cycle_b <= SPIN_SPEED;
                     
                 end else if (y_axis_latched > FORWARD_THRESHOLD) begin
                     //---------------------------------------------
-                    // FORWARD - Y > 385 (with turning capability)
+                    // FORWARD - Y > 395 (straight forward only)
                     //---------------------------------------------
                     motor_a1 <= 1'b0;
                     motor_a2 <= 1'b1;
                     motor_b1 <= 1'b1;
                     motor_b2 <= 1'b0;
                     
-                    // Check for turning while moving forward
-                    if (x_axis_latched < FORWARD_TURN_LEFT) begin
-                        // FORWARD + LEFT: Motor A slow, Motor B fast
-                        if (y_axis_latched >= FORWARD_MAX) begin
-                            duty_cycle_a <= SPEEDLOW;
-                            duty_cycle_b <= SPEEDHIGH;
-                        end else begin
-                            duty_cycle_a <= SPEEDLOW;
-                            duty_cycle_b <= SPEEDHIGH;
-                        end
-                    end else if (x_axis_latched > FORWARD_TURN_RIGHT) begin
-                        // FORWARD + RIGHT: Motor A fast, Motor B slow
-                        if (y_axis_latched >= FORWARD_MAX) begin
-                            duty_cycle_a <= SPEEDHIGH;
-                            duty_cycle_b <= SPEEDLOW;
-                        end else begin
-                            duty_cycle_a <= SPEEDHIGH;
-                            duty_cycle_b <= SPEEDLOW;
-                        end
+                    // Variable speed based on Y-axis
+                    if (y_axis_latched >= FORWARD_MAX) begin
+                        duty_cycle_a <= 8'd255;
+                        duty_cycle_b <= 8'd255;
                     end else begin
-                        // FORWARD straight: Both motors same speed
-                        if (y_axis_latched >= FORWARD_MAX) begin
-                            duty_cycle_a <= 8'd255;
-                            duty_cycle_b <= 8'd255;
-                        end else begin
-                            duty_cycle_a <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 35);
-                            duty_cycle_b <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 35);
-                        end
+                        duty_cycle_a <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 25);
+                        duty_cycle_b <= 8'd100 + ((y_axis_latched - FORWARD_THRESHOLD) * 155 / 25);
                     end
                     
                 end else if (y_axis_latched < BACKWARD_THRESHOLD) begin
@@ -230,25 +209,36 @@ module motor_controller #(
                     
                 end else if (x_axis_latched < LEFT_THRESHOLD) begin
                     //---------------------------------------------
-                    // LEFT - X < 320
-                    //---------------------------------------------
-                    motor_a1 <= 1'b1;
-                    motor_a2 <= 1'b0;
-                    motor_b1 <= 1'b1;
-                    motor_b2 <= 1'b0;
-                    duty_cycle_a <= 8'd150;
-                    duty_cycle_b <= 8'd150;
-                    
-                end else if (x_axis_latched > RIGHT_THRESHOLD) begin
-                    //---------------------------------------------
-                    // RIGHT - X > 400
+                    // LEFT - X < 320 (differential speed turn)
                     //---------------------------------------------
                     motor_a1 <= 1'b0;
                     motor_a2 <= 1'b1;
+                    motor_b1 <= 1'b1;
+                    motor_b2 <= 1'b0;
+                    duty_cycle_a <= TURN_SPEED_LOW;   // Motor A slow (80)
+                    duty_cycle_b <= TURN_SPEED_HIGH;  // Motor B fast (220)
+                    
+                end else if (x_axis_latched > RIGHT_THRESHOLD) begin
+                    //---------------------------------------------
+                    // RIGHT - X > 395 (differential speed turn)
+                    //---------------------------------------------
+                    motor_a1 <= 1'b0;
+                    motor_a2 <= 1'b1;
+                    motor_b1 <= 1'b1;
+                    motor_b2 <= 1'b0;
+                    duty_cycle_a <= TURN_SPEED_HIGH;  // Motor A fast (220)
+                    duty_cycle_b <= TURN_SPEED_LOW;   // Motor B slow (80)
+                    
+                end else begin
+                    //---------------------------------------------
+                    // STOP - Neutral zone or outside all zones (LOWEST PRIORITY)
+                    //---------------------------------------------
+                    motor_a1 <= 1'b0;
+                    motor_a2 <= 1'b0;
                     motor_b1 <= 1'b0;
-                    motor_b2 <= 1'b1;
-                    duty_cycle_a <= 8'd150;
-                    duty_cycle_b <= 8'd150;
+                    motor_b2 <= 1'b0;
+                    duty_cycle_a <= 8'd0;
+                    duty_cycle_b <= 8'd0;
                 end
             end
         end

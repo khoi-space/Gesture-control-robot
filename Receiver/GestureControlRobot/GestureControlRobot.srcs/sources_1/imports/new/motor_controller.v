@@ -134,7 +134,7 @@ module motor_controller #(
     localparam SPIN_SPEED = 8'd150;            // Speed for spinning in place
     // LEFT/RIGHT differential speed parameters
     localparam TURN_SPEED_LOW  = 8'd80;        // Slow wheel for turning
-    localparam TURN_SPEED_HIGH = 8'd220;       // Fast wheel for turning
+    localparam TURN_SPEED_HIGH = 8'd240;       // Fast wheel for turning
     
     // Motor control logic - continuously evaluate latched gesture data
     always @(posedge clk or negedge rst_n) begin
